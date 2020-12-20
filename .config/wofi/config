@@ -1,0 +1,9 @@
+image_size=32
+
+
+key_expand=Control_L-l
+
+key_down=Control_L-j
+key_left=Control_L-h
+key_up=Control_L-k
+key_right=Control_L-l

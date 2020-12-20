@@ -1,0 +1,13 @@
+# Global
+output=DP-1
+anchor=bottom-right
+# Style
+format=<b>%s</b>\n%b
+width=400
+background-color=#000000cc
+border-color=#555555ff
+text-color=#ccccccff
+
+[app-name="Firefox"]
+border-color=#aa5500
+
