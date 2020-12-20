@@ -1,0 +1,27 @@
+#!/bin/bash
+I3_CONFIG_DIR=""
+I3_CONFIG_FILE=""
+CONFIG_TYPE=".i3.config"
+
+error() {
+    echo "$@"
+    exit 1
+}
+
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+  I3_CONFIG_DIR="$HOME/.i3/config.d"
+  I3_CONFIG_FILE="$HOME/.i3/config"  
+else
+  I3_CONFIG_DIR="$XDG_CONFIG_HOME/i3/config.d"
+  I3_CONFIG_FILE="$XDG_CONFIG_HOME/i3/config"  
+fi
+
+
+[ -d "$I3_CONFIG_DIR" ] || error "Create directory: $I3_CONFIG_DIR"
+[ "$(find "$I3_CONFIG_DIR" -name "*$CONFIG_TYPE" | wc -l)" = 0 ] && error "No configs in directory"
+echo "# Generated with i3-config !!! No point in editing this file" > "$I3_CONFIG_FILE"
+cat "$I3_CONFIG_DIR"/*$CONFIG_TYPE >> "$I3_CONFIG_FILE"
+i3-msg reload
+
+

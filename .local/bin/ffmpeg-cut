@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+
+usage() {
+    echo "usage: ffmpeg-cut <source> <start> <end> <output> [ffmpeg-args...]"
+    echo "    time format: 00:00:00.00"
+}
+
+
+SOURCE=$1
+START=$2
+END=$3
+OUTPUT=$4
+
+if [ -z "$SOURCE" ] || [ -z "$START" ] || [ -z "$END" ] || [ -z "$OUTPUT" ]; then
+    echo "Not enough arguments"
+    usage
+    exit 1
+fi
+shift 4
+
+ffmpeg -i "$SOURCE" -ss "$START" -to "$END" -vcodec copy -acodec copy "$@" "$OUTPUT"

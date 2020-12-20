@@ -1,0 +1,7 @@
+#!/bin/sh
+
+
+for file in "$@"; do
+    adb wait-for-sideload
+    adb sideload "$file"
+done
