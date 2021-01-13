@@ -4,6 +4,7 @@ alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
 alias vim-config='git --git-dir="$HOME/.vim/.git" --work-tree="$HOME/.vim"'
 alias grep="grep --color"
 alias -- -="cd -"
+alias ..="cd .."
 alias e="$EDITOR"
 alias yt-dl-meme='youtube-dl -o "%(uploader)s - %(title)s-%(id)s.%(ext)s" --add-metadata --write-description --write-info-json'
 alias lynx="lynx -vikeys"
