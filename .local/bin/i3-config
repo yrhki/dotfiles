@@ -20,7 +20,12 @@ fi
 
 [ -d "$I3_CONFIG_DIR" ] || error "Create directory: $I3_CONFIG_DIR"
 [ "$(find "$I3_CONFIG_DIR" -name "*$CONFIG_TYPE" | wc -l)" = 0 ] && error "No configs in directory"
-echo "# Generated with i3-config !!! No point in editing this file" > "$I3_CONFIG_FILE"
+echo "# Generated with i3-config !!! No point in editing this file
+# Files:" > "$I3_CONFIG_FILE"
+for file in "$I3_CONFIG_DIR"/*"$CONFIG_TYPE"; do
+    printf '# %s\n' "$(realpath --no-symlinks --relative-to="$HOME" "$file")" >> "$I3_CONFIG_FILE"
+done
+echo >> "$I3_CONFIG_FILE"
 cat "$I3_CONFIG_DIR"/*$CONFIG_TYPE >> "$I3_CONFIG_FILE"
 i3-msg reload
 
