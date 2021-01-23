@@ -20,7 +20,7 @@ OPTION=$1
 shift
 case "$OPTION" in
     init)
-        git clone --branch station --bare "$DOTFILES_REPO" "$HOME/.dotfiles"A
+        git clone --branch station --bare "$DOTFILES_REPO" "$HOME/.dotfiles"
         run_dotfiles checkout
         run_dotfiles config --local status.showUntrackedFiles no
         
