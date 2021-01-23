@@ -1,0 +1,16 @@
+#!/bin/sh
+set -x
+
+export MOZ_WEBRENDER=1
+export MOZ_DBUS_REMOTE=1
+
+case "$XDG_CURRENT_DESKTOP" in
+    sway)
+        export MOZ_ENABLE_WAYLAND=1
+        ;;
+    *)
+        export GTK_USE_PORTAL=1
+        ;;
+esac
+
+/usr/bin/firefox-developer-edition "$@"

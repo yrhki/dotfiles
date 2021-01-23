@@ -1,0 +1,23 @@
+#!/bin/sh
+
+readonly OPTION=$1
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    case "$OPTION" in
+        paste) wl-paste;;
+        copy)  wl-copy;;
+        *)
+            echo "Invalid option"
+            exit 1
+            ;;
+    esac
+    exit 1
+else
+    case "$OPTION" in
+        paste) xclip -o -selection clipboard;;
+        copy)  xclip -selection clipboard;;
+        *)
+            echo "Invalid option"
+            exit 1
+            ;;
+    esac
+fi
