@@ -1,0 +1,31 @@
+#!/bin/bash
+readonly SCRIPT_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
+readonly DOTFILES_REPO=${DOTFILES_REPO:-git@gitlab.com:yrhki/dotfiles.git}
+
+# run git commands from dotfiles
+function run_dotfiles() {
+    git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"
+}
+
+# full setup vim
+function init_vim() {
+    git clone git@gitlab.com:yrhki/vim.git "$HOME/.vim"
+}
+
+# default to init when running in pipe
+[[ $SCRIPT_DIR == "." && ! -e ~/.dotfiles ]] && eval set -- init
+
+OPTION=$1
+shift
+case "$OPTION" in
+    init)
+        git clone --bare "$DOTFILES_REPO" "$HOME/.dotfiles"A
+        run_dotfiles checkout
+        run_dotfiles config --local status.showUntrackedFiles no
+        
+        # delete script if run from elsewhere
+        [[ "$SCRIPT_DIR" != "$HOME/.local/bin"  ]] && rm "$0"
+        ;;
+    vim)  init_vim;;
+    git)  run_dotfiles "$@";;
+esac
