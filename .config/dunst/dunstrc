@@ -1,0 +1,16 @@
+[global]
+font = Iosevka Term 11
+markup = yes
+format = "<b>%s</b>\n%b"
+geometry=400x100-15+49
+padding = 5
+horizontal_padding = 5
+
+[urgency_low]
+background = "#000000"
+
+[urgency_normal]
+background = "#000000"
+
+[urgency_critical]
+background = "#000000"
