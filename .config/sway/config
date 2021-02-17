@@ -1,30 +1,14 @@
 
 ### Variables
 # Modifier key
-set $mod Mod4
-# VIM movement keys
-set $left h
-set $down j
-set $up k
-set $right l
-# Preferred terminal emulator
-set $term alacritty
-# Your preferred application launcher
-# Note: pass the final command to swaymsg so that the resulting window can be opened
-# on the original workspace that the command was run on.
-#set $menu bemenu-run -m 2 -p ""
-set $menu  wofi --insensitive --dmenu --show run
-set $menu2 wofi --insensitive --allow-images --dmenu --show drun
 
-client.focused   #203030 #154040 #dddddd
-client.unfocused #404040 #303030 #dddddd
-client.focused_inactive #404040 #303030 #dddddd
 
 # Default wallpaper
 output * bg #000000 solid_color
 
-# Font for window titles and bar
-font pango:monospace 8
+# mouse button for dragging.
+floating_modifier $mod normal
+
 
 ### Idle configuration
 #
@@ -52,17 +36,17 @@ exec swayidle -w \
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-#include ~/.config/sway/conf.d/*
+include ~/.config/sway/conf.d/*
 
-include ~/.config/sway/conf.d/00-multihead.conf
-include ~/.config/sway/conf.d/10-workspaces.conf
-include ~/.config/sway/conf.d/audio.conf
-include ~/.config/sway/conf.d/autostart.conf
-include ~/.config/sway/conf.d/bar.conf
-include ~/.config/sway/conf.d/binds.conf
-include ~/.config/sway/conf.d/games.conf
-include ~/.config/sway/conf.d/input.conf
-include ~/.config/sway/conf.d/modes.conf
-include ~/.config/sway/conf.d/plasma.conf
-include ~/.config/sway/conf.d/windows.conf
-include ~/.config/sway/conf.d/wine.conf
+#include ~/.config/sway/conf.d/00-multihead.conf
+#include ~/.config/sway/conf.d/10-workspaces.conf
+#include ~/.config/sway/conf.d/audio.conf
+#include ~/.config/sway/conf.d/autostart.conf
+#include ~/.config/sway/conf.d/bar.conf
+#include ~/.config/sway/conf.d/binds.conf
+#include ~/.config/sway/conf.d/games.conf
+#include ~/.config/sway/conf.d/input.conf
+#include ~/.config/sway/conf.d/modes.conf
+#include ~/.config/sway/conf.d/plasma.conf
+#include ~/.config/sway/conf.d/windows.conf
+#include ~/.config/sway/conf.d/wine.conf
