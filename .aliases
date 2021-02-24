@@ -1,14 +1,23 @@
+# Single char commands
 alias l="ls -lp --color --group-directories-first --time-style long-iso"
-alias df="df -h"
-alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
-alias vim-config='git --git-dir="$HOME/.vim/.git" --work-tree="$HOME/.vim"'
-alias grep="grep --color"
+alias e="$EDITOR"
+alias g=git
+
+# Navigation
 alias -- -="cd -"
 alias ..="cd .."
-alias e="$EDITOR"
-alias yt-dl-meme='youtube-dl -o "%(uploader)s - %(title)s-%(id)s.%(ext)s" --add-metadata --write-description --write-info-json'
-alias lynx="lynx -vikeys"
 
+# Custom
+alias dotfiles='git --git-dir="$HOME/.dotfiles" --work-tree="$HOME"'
+alias vim-config='git --git-dir="$HOME/.vim/.git" --work-tree="$HOME/.vim"'
+
+# Add arguments
+alias df="df -h"
+alias grep="grep --color"
+alias lynx="lynx -vikeys"
+alias rsync="rsync --checksum"
+
+# Add config file to command
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 alias tmux='tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"'
 alias xbindkeys="xbindkeys -f ~/.config/xbindkeysrc"
