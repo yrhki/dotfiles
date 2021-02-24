@@ -1,5 +1,4 @@
 #!/bin/sh
 [ -f ~/.profile ] && . ~/.profile
-export XDG_SESSION_TYPE=wayland
 export XDG_CURRENT_DESKTOP=sway
-exec /usr/bin/sway &> ~/.log/sway/"$(date +%Y%m%d-%H%M%S)-sway.log"
+exec /usr/bin/sway &> ~/.log/sway/"$(date --utc +%Y%m%d-%H%M%S)-sway.log"
