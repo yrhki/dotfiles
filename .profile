@@ -4,8 +4,6 @@ export EDITOR=vim
 # Directory colors
 eval "$(TERM=xterm-256color dircolors ~/.dir_colors)"
 
-export XKB_DEFAULT_LAYOUT=yrski/programming
-
 # GO private
 export GOPRIVATE="git.rogue.lan"
 
