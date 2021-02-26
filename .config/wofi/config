@@ -2,6 +2,7 @@ image_size=32
 
 
 key_expand=Control_L-l
+key_exit=Control_L-q
 
 key_down=Control_L-j
 key_left=Control_L-h
