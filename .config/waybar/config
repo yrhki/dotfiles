@@ -7,7 +7,7 @@
     "modules-left": ["sway/workspaces", "sway/mode", "custom/media"],
     "modules-center": ["sway/window"],
     //"modules-right": ["custom/pacman", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature#gpu", "battery", "battery#bat2", "clock#local", "tray"],
-    "modules-right": ["custom/pacman", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature#gpu", "clock#local", "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature#gpu", "clock#local", "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
